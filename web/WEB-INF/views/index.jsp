@@ -1,12 +1,25 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>$Title$</title>
+    <title>$Employee Management System$</title>
 </head>
 <body>
-<a href="/displayEmployee">Add New Employee</a>
+<h1> Menu!!! </h1>
 <br>
-<a href="/viewEmployee">View Employee Record</a>
+<br>
+<a href="/displayEmployee">1. Add New Employee</a>
+<br>
+<br>
+<a href="/viewEmployee">2. View Employee Record</a>
+<br>
+<br>
+<a href="/employeeDelete">3. Delete Employee Record</a>
+<br>
+<br>
+<a href ="/employeeFind">4. Find the Employee Record</a>
+<br>
+<br>
+<a href ="/informationModification">5. Modification Employee Record</a>
 </body>
 
 </html>

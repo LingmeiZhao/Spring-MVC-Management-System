@@ -40,12 +40,49 @@ public class Methods {
         for (int i = index; i < employeeList.size() - 1; i++) {
             employeeList.set(i, employeeList.get(i + 1));
         }
+        employeeList.remove(employeeList.size()-1);
+    }
+
+    public boolean canFindEmployee(long id)
+    {
+        for(int i=0;i<employeeList.size();i++)
+        {
+            if(employeeList.get(i).getId() == id)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     public Employee findEmployee(long id) {
         Employee employee = new Employee();
         for (int i = 0; i < employeeList.size(); i++) {
             if (employeeList.get(i).getId() == id) {
+                employee = employeeList.get(i);
+            }
+        }
+        return employee;
+    }
+
+    public boolean canModification(long id)
+    {
+        for(int i=0;i<employeeList.size();i++)
+        {
+            if(employeeList.get(i).getId() == id){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public Employee modificationInfo(long id)
+    {
+        Employee employee = new Employee();
+        for(int i=0; i < employeeList.size();i++)
+        {
+            if(employeeList.get(i).getId() == id)
+            {
                 employee = employeeList.get(i);
             }
         }
