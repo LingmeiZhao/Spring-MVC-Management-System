@@ -20,6 +20,9 @@
 <br>
 <br>
 <a href ="/informationModification">5. Modification Employee Record</a>
+<br>
+<br>
+<a href = "/saveInfo">6. Save Employee Records</a>
 </body>
 
 </html>

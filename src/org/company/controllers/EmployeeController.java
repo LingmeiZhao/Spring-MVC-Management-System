@@ -124,9 +124,24 @@ public class EmployeeController {
 
     @RequestMapping(value = "/viewEmployee", method = RequestMethod.GET)
     public String viewEmployee(Model model) {
+        methods.readIntoList();
         String[] strings = methods.displayEmployee();
         model.addAttribute("data", String.join("\n", strings));
         return "employeeView";
+    }
+
+    @RequestMapping(value ="saveInfo", method = RequestMethod.GET)
+    public String saveInformation(Model model){
+        return "saveInfoToFile";
+
+    }
+
+    @RequestMapping(value ="/saveInfoToFile", method = RequestMethod.POST)
+    public String saveInfoToFile(@ModelAttribute("employee") Employee employee,
+                                 BindingResult result, ModelMap model)
+    {
+        methods.writeToFile("/home/juliazhao/Documents/MyCode/Java/EmployeeManagementSystem/savaedData.txt");
+        return "index";
     }
 
     @RequestMapping(value = "/raiseError", method = RequestMethod.POST)
