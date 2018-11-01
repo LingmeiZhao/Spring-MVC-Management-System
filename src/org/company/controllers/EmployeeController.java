@@ -124,7 +124,6 @@ public class EmployeeController {
 
     @RequestMapping(value = "/viewEmployee", method = RequestMethod.GET)
     public String viewEmployee(Model model) {
-        methods.readIntoList();
         String[] strings = methods.displayEmployee();
         model.addAttribute("data", String.join("\n", strings));
         return "employeeView";
@@ -141,6 +140,20 @@ public class EmployeeController {
                                  BindingResult result, ModelMap model)
     {
         methods.writeToFile("/home/juliazhao/Documents/MyCode/Java/EmployeeManagementSystem/savaedData.txt");
+        return "index";
+    }
+
+    @RequestMapping(value ="uploadInfo", method = RequestMethod.GET)
+    public String uploadInfo(Model model)
+    {
+        return "infoUpload";
+    }
+
+    @RequestMapping(value = "/uploadInfoFromFile", method = RequestMethod.POST)
+    public String uploadInfoFromFile(@ModelAttribute("employee") Employee employee,
+                                     BindingResult result, ModelMap model)
+    {
+        methods.readIntoList();
         return "index";
     }
 
